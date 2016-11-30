@@ -25,7 +25,7 @@ SECRET_KEY = 'dx@=n9-2jkeyhkt)u(kdwg!eer4b#gl2tlmt)_e+3w(zk39yf9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testing-anubhavsingh.c9users.io']
 
 
 # Application definition
