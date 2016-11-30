@@ -1,10 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+</head>
+<style>
+    .work{
+        padding:30px;
+        margin:0px;
+    }
+</style>
+<body>
+
+
 {% if queryset %}
-    <h1><ul>Title's</ul></h1>
-    
+    <div class='work'>
+        <div class='col-sm-offset-3'>
+    <h1><ul>Title's</ul></h1><hr/>
+    <div class='row'>
+        <div class='col-sm-6'>
     {% for x in queryset %}
-        <li><a href="/heading/{{ x }}">{{ x.title }}</a></li>
-    {% endfor %}
     
+    <div class="fluid-container">
+        <div class='thumbnail'>
+        <li><a href="/heading/{{ x }}">{{ x.title }}</a></li>
+        </div>
+        </div>
+    
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+    </div>
 {% else %}
-    <h1>No title's present</h1>
+    <h1>No category's present</h1>
 {% endif %}
+
+</body>

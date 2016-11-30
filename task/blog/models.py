@@ -13,10 +13,11 @@ class Content(models.Model):
         return self.title + " -- " + self.sub_title
     
 class Content_Types(Content):
+    element=models.CharField(max_length=120)
     content=models.TextField()
     image=models.ImageField(blank=True)
     video=models.FileField(blank=True)
     
     def __unicode__(self):
-        return self.content
+        return self.element
     

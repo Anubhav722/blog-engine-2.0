@@ -1,20 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+</head>
+<style>
+
+    h1 {
+    font-family: Lobster, Monospace;
+    color:red;
+  }
+  h3{
+      margin:50px;
+  }
+  .work{
+      padding:30px;
+      
+  }
+</style>
+<body>
+<div class='col-sm-8 col-sm-offset-2'>
+<div class="container-fluid">
+    <div class='row'>
+        <form class='work' method='GET' action='' value='{{ request.GET.query }}'>
+            <input type='text' name='query' placeholder='Search'/>
+            <input type='submit' value='Search'/>
+            
+        </form>
 {% if instance_list %}
-    <ul><h1>List</h1>
+
+    <ul><h1><center>List</center></h1>
     {% for x in instance %}
-        <li>{{ x.content }}</li>
+    <div class="thumbnail">
+        <h3><center><strong>{{ x.element }}</strong></center></h3>
+        <h3>{{ x.content }}</h3>
+        
         {% if x.image %}
-            <img src='{{ x.image.url }}' /></br>
+        
+            <img src='{{ x.image.url }} 'class="img-responsive" /></br>
+        
         {% endif %}
+        
         {% if x.video %}
-            <video width="320" height="240" controls>
+            <center><video width="320" height="240" controls>
                 <source src="{{ x.video.url }}" type="video/mp4">
                 <source src="movie.ogg" type="video/ogg">
             Your browser does not support the video tag.
-            </video>
+            </video></center>
         {% endif %}
+        
+        </div>
     {% endfor %}
     </ul>
 
 {% else %}
     <h1>No data present</h1>
 {% endif %}
+</div>
+
+</div>
+</div>
+
+
+</body>
