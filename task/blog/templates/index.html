@@ -1,0 +1,10 @@
+{% if queryset %}
+    <h1><ul>Title's</ul></h1>
+    
+    {% for x in queryset %}
+        <li><a href="/heading/{{ x }}">{{ x.title }}</a></li>
+    {% endfor %}
+    
+{% else %}
+    <h1>No title's present</h1>
+{% endif %}
